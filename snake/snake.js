@@ -31,7 +31,7 @@ function Snake() {
             }
         }
         
-
+//what about this
     }
 
 
