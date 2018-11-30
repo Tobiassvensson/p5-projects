@@ -1,13 +1,13 @@
 function Snake() {
-    this.x = 0;
-    this.y = 0;
-    this.xspeed = 1;
-    this.yspeed = 0;
+    this.x = 300;
+    this.y = 500;
+    this.xspeed = 0;
+    this.yspeed = -1;
     this.total = 0;
     this.tail = [];
 
-    this.eat = function(pos) {
-        var d = dist(this.x, this.y, pos.x, pos.y);
+    this.eat = function(position) {
+        var d = dist(this.x, this.y, position.x, position.y);
         if (d < 1) {
             this.total++; 
             return true;
@@ -19,6 +19,19 @@ function Snake() {
     this.dir = function(x, y) {
         this.xspeed = x;
         this.yspeed = y;
+    }
+
+    this.death = function () {
+        for (var i = 0; i < this.tail.length; i++){
+            var position = this.tail[i];
+            var d = dist(this.x, this.y, pos.x, pos.y);
+            if (d < 1) {
+                this.total = 0;
+                this.tail = []
+            }
+        }
+        
+
     }
 
 
