@@ -59,6 +59,8 @@ function Snake() {
         //         text('Score: ' + this.total, 275, 300);
         // }
 
+        //can you se this?
+
 
         
       
