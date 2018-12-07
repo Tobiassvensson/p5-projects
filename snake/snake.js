@@ -5,6 +5,7 @@ function Snake() {
     this.yspeed = -1;
     this.total = 0;
     this.tail = [];
+    this.score = 0;
 
     this.eat = function(position) {
         var d = dist(this.x, this.y, position.x, position.y);
@@ -24,14 +25,12 @@ function Snake() {
     this.death = function () {
         for (var i = 0; i < this.tail.length; i++){
             var position = this.tail[i];
-            var d = dist(this.x, this.y, pos.x, pos.y);
+            var d = dist(this.x, this.y, position.x, position.y);
             if (d < 1) {
                 this.total = 0;
-                this.tail = []
+                this.tail = [];
             }
         }
-        
-//what about this
     }
 
 
@@ -48,7 +47,21 @@ function Snake() {
 
          this.x = constrain(this.x, 0, width-scl);
          this.y = constrain(this.y, 0, height-scl);
-      }
+
+        fill(255);
+        textSize(14);
+        text('Score: ' + this.total, 10, 30);
+            
+
+}
+        // this.qudo = function() {
+        //     if (this.total = [3]){
+        //         text('Score: ' + this.total, 275, 300);
+        // }
+
+
+        
+      
     
 
     this.show = function() {

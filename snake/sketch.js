@@ -2,6 +2,8 @@ var s;
 var scl = 20;
 var food;
 
+//if death = true set score to 0
+
 function setup() {
   createCanvas(600, 600);
   s = new Snake();
@@ -26,6 +28,7 @@ function draw() {
     s.death();
     s.update();
     s.show();
+    // s.qudo();
 
   
 
